@@ -1,0 +1,924 @@
+﻿:root {
+    --accent-color: red;
+    --theme-color-1: rgb(255, 26, 14);
+    --theme-color-2: rgb(0, 186, 293);
+    --theme-color-3: rgb(158, 246, 0);
+
+    --theme-color-1-mixed: rgb(107.5, 86, 225);
+    --theme-color-2-mixed: rgb(129,216,146.5);
+    --theme-color-3-mixed: rgb(225, 26, 14);
+
+    --theme-color-1-faded: rgba(255, 26, 14, 0.5);
+    --theme-color-2-faded: rgba(0, 186, 293, 0.5);
+    --theme-color-3-faded: rgba(158, 246, 0, 0.5);
+}
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat:100");
+
+@font-face {
+    font-family: 'AmaticSC-Regular';
+    src: url('font/AmaticSC-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'BrownBagLunch';
+    src: url('font/BrownBagLunch.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Amsterdam Laviera';
+    src: url('font/Amsterdam Laviera.ttf') format('truetype');
+}
+
+
+body {
+    background-image: url('img/topographic.jpg');
+    background-size: auto;
+    margin: 0;
+    font-family: 'Open Sans', 'sans-serif'; /*'BrownBagLunch';*/
+    background-repeat: repeat !important;
+    /*-webkit-touch-callout: none; /* iOS Safari *
+    -webkit-user-select: none; /* Safari *
+    -khtml-user-select: none; /* Konqueror HTML *
+    -moz-user-select: none; /* Firefox *
+    -ms-user-select: none; /* Internet Explorer/Edge *
+    user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+    font-size: 1.6em;
+}
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat; /* no-repeat */
+}
+
+section::before {
+    background: black;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+
+/* #region navbar */
+#navbar {
+    position: -webkit-sticky;
+    position: sticky;
+    justify-content: center;
+    top: 0;
+    width: 100vw;
+    max-width: 100%;
+    /*background: rgba(255,0,0,0.5);*/
+    height: 3em;
+    margin-top: -3em;
+    z-index: 999;
+    background: black;
+}
+#navbar button {
+    border-color: white;
+    color: white;
+    font-size:1.5em;
+}
+#navbar button:not(:last-child) {
+    margin-right: 1em;
+}
+#navbar button:hover {
+    background: white;
+    color: black !important;
+    border-color: white !important;
+}
+#navbar button.selected {
+    border-width: .1em;
+    color: black;
+    background: white;
+}
+
+/* #endregion navbar */
+
+/* #region home */
+#home .outer {
+    padding: 0;
+    border-color: white;
+    border-bottom: none;
+    background: rgba(0, 0, 0, 0.25);
+}
+#home .inner {
+    padding: 0;
+    flex-direction: column;
+    align-items: center;
+    position: sticky;
+    top: calc(-100vh + 3em); /* stick to the bottom of the screen so that banner becomes background for navbar */
+    color: white;
+    height: 100vh;
+    width: 100vw;
+    max-width: 100%;
+    z-index: 2;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding-top: 6em;
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+/* #region scanlines */
+.scanlines {
+    overflow: hidden;
+    mix-blend-mode: difference;
+}
+
+    .scanlines::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: repeating-linear-gradient(to bottom, transparent 0%, rgba(255, 255, 255, 0.1) 0.5%, transparent 1%);
+        animation: fudge 7s ease-in-out alternate infinite;
+    }
+
+@keyframes fudge {
+    from {
+        transform: translate(0px, 0px);
+    }
+
+    to {
+        transform: translate(0px, 2%);
+    }
+}
+/* #endregion */
+
+
+#home .glitch {
+    font-weight: normal;
+    font-size: 5em;
+    margin-bottom: 0;
+    color: white;
+    font-family: 'Amsterdam Laviera';
+    text-align: center;
+    line-height: 0.65em;
+}
+
+    #home .glitch:first-of-type {
+        margin-top: 2em;
+    }
+
+
+/* #region title */
+
+#home .title {
+    font-size: 1.5em;
+    color: white;
+    color: white !important;
+    line-height: 0.85em;
+    padding: 0 0.25em 0.1em 0.15em;
+    border-radius: 0.1em;
+    flex-grow: 100;
+    display: flex;
+    align-items: center;
+}
+#home .title::after {
+    content: "...";
+}
+/* #endregion */
+
+/* #region socials */
+#home #socials {
+    position: absolute;
+    top: 0.5em;
+    right: 0.75em;
+    font-size: 0.5em;
+    align-items: flex-end;
+}
+
+    #home #socials a {
+        text-decoration: none;
+        color: white;
+        font-size: 3em;
+        cursor: pointer;
+    }
+
+        #home #socials a:hover {
+            color: red;
+        }
+/* #endregion */
+
+/* #region summary */
+#home #summary {
+    background: #EEE;
+    color: #333;
+    padding: 2em 0 160px 0;
+    font-size: 0.85em;
+    width: 100%;
+}
+#home #summary div {
+    padding: 0 1em;
+    max-width: 560px;
+    margin: 0 auto;
+}
+#home #summary b {
+    color: red;
+}
+/* #endregion */
+
+/* #region profile */
+#home .profile {
+    border-radius: 100%;
+    overflow: hidden;
+    border: 2px solid white;
+    width: 8em;
+    height: 8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 15px red;
+}
+    #home .profile img {
+        width: 180%;
+        animation: spin 5s infinite;
+    }
+@keyframes spin {
+
+
+    25% {
+        opacity: 1;
+        -webkit-filter: none;
+    }
+    50% {
+        opacity: 0.75;
+        -webkit-filter: blur(2px);
+    }
+    75% {
+        opacity: 1;
+        -webkit-filter: none;
+    }
+}
+
+/* #endregion */
+
+#home canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -2;
+}
+
+/* #region money rain */
+#rain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+    #rain div.money { background-image: url('img/money.jpg'); }
+    #rain div.gtx { background-image: url('img/3090.png'); }
+    #rain div.wow { background-image: url('img/wow.png'); }
+    #rain div.dscim { background-image: url('img/dscim.png'); }
+
+    #rain div {
+        min-width: 3em;
+        width: 10%; /*2.3em;*/
+        height: 2em; /* height doesnt really matter that much, want it to be big enough to where it always fits. this also determines the center of rotation */
+        opacity: 0; /* invisible until animation starts*/
+        display: inline-block;
+        position: relative;
+        background-size: contain;
+        background-repeat: no-repeat;
+        -webkit-animation: rain 5s infinite linear;
+        -moz-animation: rain 5s infinite linear;
+    }
+
+        #rain div:nth-child(4n-4) {
+            -webkit-animation-delay: .5s;
+            -moz-animation-delay: .5s;
+        }
+
+        #rain div:nth-child(5n+3) {
+            -webkit-animation-delay: .75s;
+            -moz-animation-delay: .75s;
+        }
+
+        #rain div:nth-child(3n-3) {
+            -webkit-animation-delay: 1.5s;
+            -moz-animation-delay: 1.5s;
+        }
+
+        #rain div:nth-child(2n+5) {
+            -webkit-animation-delay: 2s;
+            -moz-animation-delay: 2s;
+        }
+
+        #rain div:nth-child(3n+10) {
+            -webkit-animation-delay: 2.5s;
+            -moz-animation-delay: 2.5s;
+        }
+
+        #rain div:nth-child(7n+5) {
+            -webkit-animation-delay: 3s;
+            -moz-animation-delay: 3s;
+        }
+
+        #rain div:nth-child(4n+5) {
+            -webkit-animation-delay: 3.25s;
+            -moz-animation-delay: 3.25s;
+        }
+
+        #rain div:nth-child(3n+7) {
+            -webkit-animation-delay: 4s;
+            -moz-animation-delay: 4s;
+        }
+
+@-webkit-keyframes rain {
+    0% {
+        opacity: 1;
+        -webkit-transform: translate(0, -5vh) rotateZ(0deg);
+    }
+
+    75% {
+        opacity: 1;
+        -webkit-transform: translate(100px, 75vh) rotateZ(270deg);
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: translate(150px, 95vh) rotateZ(360deg);
+    }
+}
+
+@-moz-keyframes rain {
+    0% {
+        opacity: 1;
+        -webkit-transform: translate(0, -5vh) rotateZ(0deg);
+    }
+
+    75% {
+        opacity: 1;
+        -webkit-transform: translate(4em, 75vh) rotateZ(270deg);
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: translate(5em, 85vh) rotateZ(360deg);
+    }
+}
+/* #endregion money rain */
+
+/* #endregion */
+
+
+
+/* #region content */
+.content {
+    min-height: calc(100vh - 3em); /* 100vh; */
+    height: auto; /* 100vh; */
+    padding: 0 25% 0 25%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+    /*  .outer provides background and border */
+    .content .outer {
+        flex-basis: 100%;           /* filling .content's height */
+        flex-grow: 100;
+
+        display: flex;              /* making .inner fill this height (minus margin) */
+        flex-direction: column;
+
+        background: white;
+        border-width: 0 0.05em 0.05em 0.05em;
+        border-color: var(--accent-color);
+        border-style: solid;
+
+        padding: 0 .25em .25em .25em;
+    }
+    /* .inner provides scrollable content (outers padding offsets inners scrollbar from the border) */
+    .content .inner {
+        flex-basis: 100%;
+        flex-shrink: 0;
+        flex-grow: 100;
+        font-size: 1.25em;
+
+        padding: 0 .5em 0 .5em;
+    }
+        .content .inner .header {
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+            padding-top: .15em;
+            margin-bottom: .25em;
+            font-family: 'AmaticSC-Regular';
+            position: sticky;
+            top: 1.2em;
+            background: white;
+            border-bottom: 0.0125em solid var(--accent-color);
+            z-index: 1;
+        }
+
+/* #endregion content */
+
+#about::before {
+    background: red;
+}
+
+/* #region contact */
+#contact {
+    text-align: center;
+}
+    #contact:before {
+        background: yellow;
+    }
+.input-wrapper, .textarea-wrapper {
+    border: 1px solid var(--accent-color);
+    border-radius: .15em;
+    display: flex;
+    margin-bottom: 1em;
+    padding-top: .25em;
+    padding-right: 0.03em;
+}
+.input-wrapper {
+    padding-bottom: .25em;
+    align-items: center;
+}
+.textarea-wrapper {
+    padding-bottom: 0.03em;
+}
+    .textarea-wrapper textarea {
+        height: 25em;
+        resize: vertical;
+    }
+.input-wrapper i, .textarea-wrapper i {
+    flex-shrink: 0;
+    margin: 0 .5em 0 .5em;
+    color: var(--theme-color-3-mixed);
+}
+    .input-wrapper input, .textarea-wrapper textarea {
+        flex-grow: 100;
+        font-family: Arial;
+        outline: none;
+        border: none;
+        font-size: .5em;
+    }
+
+#send {
+    color: var(--theme-color-3-mixed);
+    font-size: 1em;
+    min-width: 8em;
+}
+
+    #send:hover {
+        background: var(--theme-color-3-mixed);
+        color: white;
+    }
+/* #endregion contact */
+
+
+
+
+/* #region util */
+button.material-icons {
+    outline: none;
+    border: none;
+    background: none;
+    font-size: 2em;
+}
+.outline-button {
+    background: none;
+    outline: none;
+    border: .05em solid var(--accent-color);
+    border-radius: .2em;
+    color: white;
+    padding: 0em 1em 0em 1em;
+    font-family: 'AmaticSC-Regular';
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.center-align {
+    text-align: center;
+}
+/* #endregion util */
+
+/* #region flex */
+.flex-center {
+    display: flex;
+    align-items: center;
+}
+.flex-fill {
+    flex-shrink: 0;
+    flex-grow: 100;
+}
+/* #endregion flex */
+
+
+@media(max-width: 968px) {
+    #warning {
+        padding: 0 1em 0 1em;
+    }
+    .content {
+        padding: 0;
+    }
+}
+
+@media (min-width: 969px) and (max-width: 1600px) {
+    #warning {
+        padding: 0 20% 0 20%;
+    }
+    #warning h1 {
+        margin-top: 0;
+    }
+    .content {
+        padding: 0 15% 0 15%;
+    }
+}
+
+@media (max-device-width:968px) {
+    body {
+        font-size: 1em;
+    }
+    #navbar {
+        display: none;
+    }
+    #banner {
+        top: unset;
+    }
+    .content {
+        height: auto;
+        min-height: 100vh;
+        padding: 0;
+    }
+        .content .outer {
+            margin-top: 0;
+        }
+        .content .inner {
+            overflow-y: visible;
+            font-size: 1.75em;
+        }
+        .content .inner .header {
+            margin-left: -.3em;
+            margin-right: -.3em;
+            top:0;
+        }
+    .testimonial img {
+        width: 4em;
+        height: 4em;
+    }
+}
+
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+.column.gap { grid-row-gap: 1em; }
+.column.gap-75 { grid-row-gap: 0.75em; }
+.column.gap-50 { grid-row-gap: 0.5em; }
+.column.gap-25 { grid-row-gap: 0.25em; }
+.column.gap-10 { grid-row-gap: 0.1em; }
+
+.row { display: flex }
+.row.gap { grid-column-gap: 1em; }
+.row.gap-75 { grid-column-gap: 0.75em; }
+.row.gap-50 { grid-column-gap: 0.5em; }
+.row.gap-25 { grid-column-gap: 0.25em; }
+.row.gap-10 { grid-column-gap: 0.1em; }
+
+/* #region glitch */
+
+
+@keyframes super-glitch {
+    0% { transform: rotateX(0) skewX(0); }
+    1% { transform: rotateX(10deg) skewX(90deg); }
+    2% { transform: rotateX(0) skewX(0); }
+}
+
+
+
+.glitch {
+    position: relative;
+    color: white;
+    font-size: 4em;
+}
+
+    .glitch::before {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        left: 2px;
+        text-shadow: -2px 0 red;
+        clip: rect(44px, 450px, 56px, 0);
+        animation: glitch-anim 5s infinite linear alternate-reverse;
+    }
+
+    .glitch::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        left: -2px;
+        text-shadow: -2px 0 #00fff9, 2px 2px red;
+        animation: glitch-anim2 1s infinite linear alternate-reverse;
+    }
+
+/* Creates an animation with 20 steaps. For each step, it calculates 
+a percentage for the specific step. It then generates a random clip
+box to be used for the random glitch effect. Also adds a very subtle
+skew to change the 'thickness' of the glitch.*/
+@keyframes glitch-anim {
+    0% {
+        clip: rect(59px, 9999px, 42px, 0);
+        transform: skew(0.67deg);
+    }
+
+    5% {
+        clip: rect(62px, 9999px, 95px, 0);
+        transform: skew(0.97deg);
+    }
+
+    10% {
+        clip: rect(59px, 9999px, 54px, 0);
+        transform: skew(0.6deg);
+    }
+
+    15% {
+        clip: rect(40px, 9999px, 68px, 0);
+        transform: skew(0.02deg);
+    }
+
+    20% {
+        clip: rect(63px, 9999px, 99px, 0);
+        transform: skew(0.73deg);
+    }
+
+    25% {
+        clip: rect(14px, 9999px, 60px, 0);
+        transform: skew(0.13deg);
+    }
+
+    30% {
+        clip: rect(61px, 9999px, 49px, 0);
+        transform: skew(0.05deg);
+    }
+
+    35% {
+        clip: rect(15px, 9999px, 58px, 0);
+        transform: skew(0.05deg);
+    }
+
+    40% {
+        clip: rect(22px, 9999px, 88px, 0);
+        transform: skew(0.15deg);
+    }
+
+    45% {
+        clip: rect(54px, 9999px, 54px, 0);
+        transform: skew(0.32deg);
+    }
+
+    50% {
+        clip: rect(45px, 9999px, 68px, 0);
+        transform: skew(0.48deg);
+    }
+
+    55% {
+        clip: rect(85px, 9999px, 33px, 0);
+        transform: skew(0.58deg);
+    }
+
+    60% {
+        clip: rect(25px, 9999px, 1px, 0);
+        transform: skew(0.06deg);
+    }
+
+    65% {
+        clip: rect(45px, 9999px, 86px, 0);
+        transform: skew(0.84deg);
+    }
+
+    70% {
+        clip: rect(98px, 9999px, 64px, 0);
+        transform: skew(0.67deg);
+    }
+
+    75% {
+        clip: rect(84px, 9999px, 49px, 0);
+        transform: skew(0.04deg);
+    }
+
+    80% {
+        clip: rect(2px, 9999px, 93px, 0);
+        transform: skew(0.32deg);
+    }
+
+    85% {
+        clip: rect(86px, 9999px, 89px, 0);
+        transform: skew(0.61deg);
+    }
+
+    90% {
+        clip: rect(94px, 9999px, 48px, 0);
+        transform: skew(0.19deg);
+    }
+
+    95% {
+        clip: rect(73px, 9999px, 80px, 0);
+        transform: skew(0.21deg);
+    }
+
+    100% {
+        clip: rect(81px, 9999px, 100px, 0);
+        transform: skew(0.91deg);
+    }
+}
+
+@keyframes glitch-anim2 {
+    0% {
+        clip: rect(83px, 9999px, 43px, 0);
+        transform: skew(0.83deg);
+    }
+
+    5% {
+        clip: rect(31px, 9999px, 54px, 0);
+        transform: skew(0.17deg);
+    }
+
+    10% {
+        clip: rect(56px, 9999px, 44px, 0);
+        transform: skew(0.03deg);
+    }
+
+    15% {
+        clip: rect(25px, 9999px, 62px, 0);
+        transform: skew(0.31deg);
+    }
+
+    20% {
+        clip: rect(37px, 9999px, 57px, 0);
+        transform: skew(0.56deg);
+    }
+
+    25% {
+        clip: rect(63px, 9999px, 25px, 0);
+        transform: skew(0.38deg);
+    }
+
+    30% {
+        clip: rect(7px, 9999px, 14px, 0);
+        transform: skew(0.66deg);
+    }
+
+    35% {
+        clip: rect(20px, 9999px, 64px, 0);
+        transform: skew(0.39deg);
+    }
+
+    40% {
+        clip: rect(4px, 9999px, 38px, 0);
+        transform: skew(0.15deg);
+    }
+
+    45% {
+        clip: rect(21px, 9999px, 4px, 0);
+        transform: skew(0.28deg);
+    }
+
+    50% {
+        clip: rect(93px, 9999px, 61px, 0);
+        transform: skew(0.79deg);
+    }
+
+    55% {
+        clip: rect(85px, 9999px, 36px, 0);
+        transform: skew(0.67deg);
+    }
+
+    60% {
+        clip: rect(7px, 9999px, 27px, 0);
+        transform: skew(1deg);
+    }
+
+    65% {
+        clip: rect(18px, 9999px, 94px, 0);
+        transform: skew(0.94deg);
+    }
+
+    70% {
+        clip: rect(92px, 9999px, 77px, 0);
+        transform: skew(0.73deg);
+    }
+
+    75% {
+        clip: rect(9px, 9999px, 96px, 0);
+        transform: skew(0.29deg);
+    }
+
+    80% {
+        clip: rect(14px, 9999px, 98px, 0);
+        transform: skew(0.67deg);
+    }
+
+    85% {
+        clip: rect(13px, 9999px, 99px, 0);
+        transform: skew(0.82deg);
+    }
+
+    90% {
+        clip: rect(58px, 9999px, 45px, 0);
+        transform: skew(0.29deg);
+    }
+
+    95% {
+        clip: rect(77px, 9999px, 51px, 0);
+        transform: skew(0.34deg);
+    }
+
+    100% {
+        clip: rect(20px, 9999px, 77px, 0);
+        transform: skew(0.03deg);
+    }
+}
+
+@keyframes glitch-skew {
+    0% {
+        transform: skew(4deg);
+    }
+
+    10% {
+        transform: skew(4deg);
+    }
+
+    20% {
+        transform: skew(-4deg);
+    }
+
+    30% {
+        transform: skew(0deg);
+    }
+
+    40% {
+        transform: skew(4deg);
+    }
+
+    50% {
+        transform: skew(3deg);
+    }
+
+    60% {
+        transform: skew(-2deg);
+    }
+
+    70% {
+        transform: skew(5deg);
+    }
+
+    80% {
+        transform: skew(3deg);
+    }
+
+    90% {
+        transform: skew(0deg);
+    }
+
+    100% {
+        transform: skew(-1deg);
+    }
+}
+/* #endregion */
+
+/* #region dividers */
+.divide { position: relative; }
+.divide.before { padding-top: 126px; }
+.divide.after { padding-bottom: 126px; }
+.divide.before::before, .divide.after::after {
+    content: "";
+    width: 100%;
+    height: 126px;
+    background-position: top center;
+    background-size: 100% 126px;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+.divide.after::after { bottom: 0; z-index: 2; }
+.divide.before::before { top: 0; transform: scaleY(-1) scaleX(-1); }
+
+.divide.before.white::before { background-image: url(img/dividers/white.png); }
+.divide.after.white::after { background-image: url(img/dividers/white.png); }
+.divide.before.gray::before { background-image: url(img/dividers/gray.png); }
+.divide.after.gray::after { background-image: url(img/dividers/gray.png); }
+/* #endregion */

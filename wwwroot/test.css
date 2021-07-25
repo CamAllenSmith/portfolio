@@ -1,0 +1,27 @@
+﻿body { margin: 0; }
+section {
+    height: 500px;
+}
+
+/* #region dividers */
+.divider { position: relative; }
+.divider.before { padding-top: 126px; }
+.divider.after { padding-bottom: 126px; }
+.divider.before::before, .divider.after::after {
+    content: "";
+    width: 100%;
+    height: 126px;
+    background-position: top center;
+    background-size: 100% 126px;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+.divider.after::after { bottom: 0; }
+.divider.before::before { top: 0; transform: scaleY(-1) scaleX(-1); }
+
+.divider.before.white::before { background-image: url(img/dividers/white.png); }
+.divider.after.white::after { background-image: url(img/dividers/white.png); }
+.divider.before.gray::before { background-image: url(img/dividers/gray.png); }
+.divider.after.gray::after { background-image: url(img/dividers/gray.png); }
+/* #endregion */

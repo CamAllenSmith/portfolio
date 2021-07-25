@@ -1,0 +1,9 @@
+﻿Find sub-font for title that matches new "Cameron Smith" font
+
+apply glitch effect to box-shadow of profile image to match the "Cameron Smith" title
+
+pop-in
+
+screenshot a stylized google map centered on indianapolis and use it as a static background on contact page (or somewhere else)
+
+alternate between curvey and straight dividers

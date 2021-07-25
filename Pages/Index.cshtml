@@ -1,0 +1,122 @@
+﻿@page
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Lil Dope</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+    <script defer src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script defer type="module" src="script.js"></script>
+</head>
+<body class="parallax">
+    <section id="home" class="content">
+        <div class="outer divide after white">
+            <div class="inner column gap-75 scanlines">
+                <canvas></canvas>
+
+                <div id="rain">
+                    <div class="money"></div>
+                    <div class="gtx"></div>
+                    <div class="wow"></div>
+                    <div class="dscim"></div>
+                    <div class="money"></div>
+                    <div class="gtx"></div>
+                    <div class="wow"></div>
+                    <div class="dscim"></div>
+                </div>
+
+
+
+                <div class="glitch" data-text="Cameron">Cameron</div>
+                <div class="glitch" data-text="Smith">Smith</div>
+
+                <div class="profile">
+                    <img src="~/img/lildope.png" />
+                </div>
+
+                <div class="title"></div>
+
+                <div id="socials" class="column gap-50">
+                    <div class="row gap">
+                        <a class="fab fa-linkedin" href="https://www.linkedin.com/"></a>
+                        <a class="fab fa-github-square" href="https://www.github.com/"></a>
+                    </div>
+                    <a class="fa fa-envelope-square" href="mailto:CamAllenSmith@gmail.com"></a>
+                </div>
+
+                <div id="summary">
+                    <div>
+                        Full Stack developer with an <b>eye</b> for design and a <b>mind</b> for {something smart sounding}.
+                    </div>
+                </div>
+            </div>     
+        </div>
+    </section>
+
+    @*<nav id="navbar" class="flex-center">
+        <button data-section="home" class="outline-button selected">Home</button>
+        <button data-section="about" class="outline-button">About</button>
+        <button data-section="contact" class="outline-button">Contact</button>
+    </nav>*@
+
+    <section id="about" class="content">
+        <div class="outer">
+            <div class="inner">
+                <div class="header">Who the Fuck?</div>
+                <div>
+                    Born a <span style="color:var(--accent-color)">non-gay</span> man in Indianapolis Indiana, I started taking dicks in the ass by age 3.
+                    I'm still not gay, but I'll suck a dick, eat some nut, or swallow a dude's shit anyday ya feel me? I strive to not only be the greatest non-gay homosexual rapper to ever step foot on
+                    earth, but also to inspire all my gay lil cutie boys out there to not be afraid to be straight.
+                </div>
+                <br />
+                <div class='underline center-align'>My Motto</div>
+                <div>
+                    One might argue:
+                </div>
+                <div style="padding-left: 1em; margin:.5em 0 1em 0">
+                    "You only live once: thats the motto, nigga, YOLO and we bout it every day, every day, every day,
+                    like we sittin on the bench nigga we don't really play"
+                </div>
+                <div>
+                    <span style='color:var(--accent-color)'>WRONG</span>, I'm out here living my best life in
+                    my idol Ash Ketchum's foot steps. "Gotta catch em' all" is his motto, except in my case, I'm tryna catch the most nut with my tight lil gay booty.
+                </div>
+                <br />
+                <div>
+                    Also, I swear to <span style='color:var(--accent-color)'>GOD</span>, if Trump assumes my gender one more time I'm going to
+                    <span style='color:var(--accent-color)'>LOSE IT</span>.
+                    UGghhhh politics are so important to meeee...
+                </div>
+                <br />
+                <div class='center-align'>THE END.</div>
+                <div class="center-align">P.S. No homo doe</div>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="content">
+        <div class="outer">
+            <div class="inner">
+                <!--<div class="spacer"></div>-->
+                <div class="header">Send Me a Message</div>
+                <div class="input-wrapper">
+                    <i class="material-icons">contact_mail</i>
+                    <input type="text" placeholder="Your e-mail..." />
+                </div>
+                <div class="input-wrapper">
+                    <i class="material-icons">mail_outline</i>
+                    <input id="subject" placeholder="Subject..." />
+                </div>
+                <div class="textarea-wrapper">
+                    <i class="material-icons">chat</i>
+                    <textarea id="message" placeholder="Message..."></textarea>
+                </div>
+
+                <button id="send" class="outline-button">Send</button>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
