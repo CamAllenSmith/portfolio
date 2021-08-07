@@ -12,32 +12,20 @@
     <script defer type="module" src="script.js"></script>
 </head>
 <body class="parallax">
-    <section id="home" class="content">
+    <section id="home">
         <div class="outer divide after white">
-            <div class="inner column gap-75 scanlines">
+            <div class="inner column gap scanlines">
                 <canvas></canvas>
-
                 <div id="rain">
                     <div class="money"></div>
                     <div class="gtx"></div>
-                    <div class="wow"></div>
-                    <div class="dscim"></div>
                     <div class="money"></div>
                     <div class="gtx"></div>
-                    <div class="wow"></div>
-                    <div class="dscim"></div>
+                    <div class="money"></div>
+                    <div class="gtx"></div>
+                    <div class="money"></div>
+                    <div class="gtx"></div>
                 </div>
-
-
-
-                <div class="glitch" data-text="Cameron">Cameron</div>
-                <div class="glitch" data-text="Smith">Smith</div>
-
-                <div class="profile">
-                    <img src="~/img/lildope.png" />
-                </div>
-
-                <div class="title"></div>
 
                 <div id="socials" class="column gap-50">
                     <div class="row gap">
@@ -46,6 +34,16 @@
                     </div>
                     <a class="fa fa-envelope-square" href="mailto:CamAllenSmith@gmail.com"></a>
                 </div>
+
+                <div class="column gap-75 flex-fill center justify-end">
+                    <div class="glitch" data-text="Cameron">Cameron</div>
+                    <div class="glitch" data-text="Smith">Smith</div>
+                    <div class="profile">
+                        <img src="~/img/lildope.png" />
+                    </div>
+                </div>
+
+                <div class="title flex-fill no-shrink"></div>
 
                 <div id="summary">
                     <div>
@@ -62,59 +60,73 @@
         <button data-section="contact" class="outline-button">Contact</button>
     </nav>*@
 
-    <section id="about" class="content">
+    <section id="about">
         <div class="outer">
             <div class="inner">
-                <div class="header">Who the Fuck?</div>
-                <div>
-                    Born a <span style="color:var(--accent-color)">non-gay</span> man in Indianapolis Indiana, I started taking dicks in the ass by age 3.
-                    I'm still not gay, but I'll suck a dick, eat some nut, or swallow a dude's shit anyday ya feel me? I strive to not only be the greatest non-gay homosexual rapper to ever step foot on
-                    earth, but also to inspire all my gay lil cutie boys out there to not be afraid to be straight.
-                </div>
-                <br />
-                <div class='underline center-align'>My Motto</div>
-                <div>
-                    One might argue:
-                </div>
-                <div style="padding-left: 1em; margin:.5em 0 1em 0">
-                    "You only live once: thats the motto, nigga, YOLO and we bout it every day, every day, every day,
-                    like we sittin on the bench nigga we don't really play"
-                </div>
-                <div>
-                    <span style='color:var(--accent-color)'>WRONG</span>, I'm out here living my best life in
-                    my idol Ash Ketchum's foot steps. "Gotta catch em' all" is his motto, except in my case, I'm tryna catch the most nut with my tight lil gay booty.
-                </div>
-                <br />
-                <div>
-                    Also, I swear to <span style='color:var(--accent-color)'>GOD</span>, if Trump assumes my gender one more time I'm going to
-                    <span style='color:var(--accent-color)'>LOSE IT</span>.
-                    UGghhhh politics are so important to meeee...
-                </div>
-                <br />
-                <div class='center-align'>THE END.</div>
-                <div class="center-align">P.S. No homo doe</div>
+                <h1>About Me</h1>
+                Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
+
+                <h2>Lorem Ipsum</h2>
+                Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
             </div>
         </div>
     </section>
-    <section id="contact" class="content">
+    <section id="skills">
+        <div class="outer divide after gray">
+
+            @*<video src="~/img/coding.mp4" autoplay muted loop></video>*@
+
+            <div class="inner">
+
+                <h1>Technical Proficiencies</h1>
+                I don't think having experience in different languages should be necessarilly be considered a strong selling point for a programmer.
+                Once one is adept in programming, they should be able to adapt to any language relatively quickly.
+                I'd much rather have an expert C++ developer than a guy who has dabbled in every language under the sun.
+                <br/><br/>
+                My skillset is very focused on FullStack development using [HTML, JavaScript, CSS] for front-end, C# for server-side, and MSSQL for database.
+                But as mentioned previously, I could adapt to a any different language / framework relatively quickly.
+
+                <h2>Font-End</h2>
+                <ul>
+                    <li>HTML</li>
+                    <li>Javascript ( + jQuery)</li>
+                    <li>CSS ( + SASS)</li>
+                </ul>
+                <h2>Back-End</h2>
+                <ul>
+                    <li>C# (.NET, LINQ, ASP.NET, WPF, WinForms)</li>
+                    <li>SQL (MSSQL, MySQL, SQLite, etc)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
         <div class="outer">
             <div class="inner">
-                <!--<div class="spacer"></div>-->
-                <div class="header">Send Me a Message</div>
-                <div class="input-wrapper">
-                    <i class="material-icons">contact_mail</i>
-                    <input type="text" placeholder="Your e-mail..." />
-                </div>
-                <div class="input-wrapper">
-                    <i class="material-icons">mail_outline</i>
-                    <input id="subject" placeholder="Subject..." />
-                </div>
-                <div class="textarea-wrapper">
-                    <i class="material-icons">chat</i>
-                    <textarea id="message" placeholder="Message..."></textarea>
-                </div>
+                <h1>Contact Me</h1>
 
-                <button id="send" class="outline-button">Send</button>
+                <div class="column gap-50">
+                    <div class="row gap-50">
+                        <div class="input-wrapper flex-fill">
+                            <i class="material-icons">contact_mail</i>
+                            <input type="text" placeholder="Your Email..." />
+                        </div>
+                        <div class="input-wrapper flex-fill">
+                            <i class="material-icons">contact_mail</i>
+                            <input type="text" placeholder="Your Name..." />
+                        </div>
+                    </div>
+                    <div class="input-wrapper">
+                        <i class="material-icons">mail_outline</i>
+                        <input id="subject" placeholder="Subject..." />
+                    </div>
+                    <div class="input-wrapper">
+                        <i class="material-icons">chat</i>
+                        <textarea id="message" placeholder="Message..."></textarea>
+                    </div>
+
+                    <button id="send" class="outline-button">Send</button>
+                </div>          
             </div>
         </div>
     </section>

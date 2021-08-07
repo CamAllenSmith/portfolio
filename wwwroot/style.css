@@ -49,18 +49,51 @@ body {
     background-repeat: repeat; /* no-repeat */
 }
 
-section::before {
-    background: black;
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 0.5;
-    z-index: -1;
-}
 
+/* #region content sections */
+body > section {
+    height: auto; /* 100vh; */
+    padding: 0 25% 0 25%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+    body > section::before {
+        background: black;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0.5;
+        z-index: -1;
+    }
+    /*  .outer provides background and border */
+    body > section .outer {
+        background: white;
+    }
+    /* .inner provides scrollable content (outers padding offsets inners scrollbar from the border) */
+    body > section .inner {
+        padding: 0 0.5em 0.5em 0.5em;
+    }
+
+        body > section .inner h1, body > section .inner h2 {
+            font-family: 'AmaticSC-Regular';
+            text-align: center;
+        }
+
+        body > section .inner h1 {
+            font-size: 2em;
+            margin: 0 0 0.25em 0;
+            border-bottom: 0.0125em solid var(--accent-color);
+        }
+
+        body > section .inner h2 {
+            margin: 1em 0 0 0;
+            font-size: 1.25em;
+        }
+/* #endregion */
 
 /* #region navbar */
 #navbar {
@@ -98,6 +131,16 @@ section::before {
 /* #endregion navbar */
 
 /* #region home */
+#home {
+    min-height: calc(100vh - 3em); /* 100vh; */
+    font-size: 1.25em;
+}
+
+@media screen and (max-width:720px) {
+    #home {
+        font-size: 1em;
+    }
+}
 #home .outer {
     padding: 0;
     border-color: white;
@@ -105,6 +148,8 @@ section::before {
     background: rgba(0, 0, 0, 0.25);
 }
 #home .inner {
+    border: 1px solid white;
+    border-top: none;
     padding: 0;
     flex-direction: column;
     align-items: center;
@@ -117,7 +162,6 @@ section::before {
     z-index: 2;
     overflow: hidden;
     box-sizing: border-box;
-    padding-top: 6em;
     background-color: rgba(0, 0, 0, 0.85);
 }
 
@@ -149,7 +193,9 @@ section::before {
 }
 /* #endregion */
 
-
+#home .glitch:first-of-type {
+    margin-top: 48px;
+}
 #home .glitch {
     font-weight: normal;
     font-size: 5em;
@@ -159,14 +205,7 @@ section::before {
     text-align: center;
     line-height: 0.65em;
 }
-
-    #home .glitch:first-of-type {
-        margin-top: 2em;
-    }
-
-
 /* #region title */
-
 #home .title {
     font-size: 1.5em;
     color: white;
@@ -202,13 +241,20 @@ section::before {
         #home #socials a:hover {
             color: red;
         }
+
+        @media screen and (max-width: 968px) {
+            #socials {
+                flex-direction: row;
+                grid-column-gap: 1em;
+            }
+        }
 /* #endregion */
 
 /* #region summary */
 #home #summary {
     background: #EEE;
     color: #333;
-    padding: 2em 0 160px 0;
+    padding: 2em 0 126px 0;
     font-size: 0.85em;
     width: 100%;
 }
@@ -218,7 +264,9 @@ section::before {
     margin: 0 auto;
 }
 #home #summary b {
-    color: red;
+    background: yellow;
+    color: black;
+    padding: 0 0.25em;
 }
 /* #endregion */
 
@@ -371,101 +419,49 @@ section::before {
 
 /* #endregion */
 
+/* #region about */
 
+/* #endregion */
 
-/* #region content */
-.content {
-    min-height: calc(100vh - 3em); /* 100vh; */
-    height: auto; /* 100vh; */
-    padding: 0 25% 0 25%;
-    display: flex;
-    flex-direction: column;
+/* #region skills */
+
+#skills .outer {
+    padding-top: 0.5em;
     position: relative;
+    background: #222;
+    color: white;
 }
-
-    /*  .outer provides background and border */
-    .content .outer {
-        flex-basis: 100%;           /* filling .content's height */
-        flex-grow: 100;
-
-        display: flex;              /* making .inner fill this height (minus margin) */
-        flex-direction: column;
-
+#skills video {
+    filter: grayscale(100%);
+    min-width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: -999;
+}
+    #skills video::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
         background: white;
-        border-width: 0 0.05em 0.05em 0.05em;
-        border-color: var(--accent-color);
-        border-style: solid;
-
-        padding: 0 .25em .25em .25em;
+        background: linear-gradient(0deg, white 0%, rgba(255,255,255,0.5) 33%, rgba(255,255,255,0.5) 66%, white 100%);
     }
-    /* .inner provides scrollable content (outers padding offsets inners scrollbar from the border) */
-    .content .inner {
-        flex-basis: 100%;
-        flex-shrink: 0;
-        flex-grow: 100;
-        font-size: 1.25em;
 
-        padding: 0 .5em 0 .5em;
-    }
-        .content .inner .header {
-            text-align: center;
-            font-size: 2em;
-            font-weight: bold;
-            padding-top: .15em;
-            margin-bottom: .25em;
-            font-family: 'AmaticSC-Regular';
-            position: sticky;
-            top: 1.2em;
-            background: white;
-            border-bottom: 0.0125em solid var(--accent-color);
-            z-index: 1;
-        }
 
-/* #endregion content */
 
-#about::before {
-    background: red;
-}
+
+/* #endregion */
 
 /* #region contact */
 #contact {
     text-align: center;
 }
-    #contact:before {
-        background: yellow;
+    #contact .inner {
+        background: #444957;
+        color: white;
     }
-.input-wrapper, .textarea-wrapper {
-    border: 1px solid var(--accent-color);
-    border-radius: .15em;
-    display: flex;
-    margin-bottom: 1em;
-    padding-top: .25em;
-    padding-right: 0.03em;
-}
-.input-wrapper {
-    padding-bottom: .25em;
-    align-items: center;
-}
-.textarea-wrapper {
-    padding-bottom: 0.03em;
-}
-    .textarea-wrapper textarea {
-        height: 25em;
-        resize: vertical;
-    }
-.input-wrapper i, .textarea-wrapper i {
-    flex-shrink: 0;
-    margin: 0 .5em 0 .5em;
-    color: var(--theme-color-3-mixed);
-}
-    .input-wrapper input, .textarea-wrapper textarea {
-        flex-grow: 100;
-        font-family: Arial;
-        outline: none;
-        border: none;
-        font-size: .5em;
-    }
-
 #send {
     color: var(--theme-color-3-mixed);
     font-size: 1em;
@@ -477,7 +473,6 @@ section::before {
         color: white;
     }
 /* #endregion contact */
-
 
 
 
@@ -514,18 +509,49 @@ button.material-icons {
     display: flex;
     align-items: center;
 }
-.flex-fill {
-    flex-shrink: 0;
-    flex-grow: 100;
-}
+.flex-fill { flex-grow: 100; }
+.center { align-items: center; }
+.justify-end { justify-content: flex-end; }
+.no-shrink { flex-shrink: 0; }
 /* #endregion flex */
 
+/* #region input-wrapper */
+.input-wrapper {
+    background: white;
+    border: 1px solid var(--accent-color);
+    border-radius: .15em;
+    display: flex;
+    align-items: stretch;
+}
+    .input-wrapper i {
+        flex-shrink: 0;
+        padding: 0 0.25em;
+        background: red;
+        color: white;
+        display: flex;
+        align-items: center;
+    }
+    .input-wrapper input, .input-wrapper textarea {
+        line-height: 1.25em;
+        min-height: 1.25em;
+        padding: 0.5em;
+        flex-grow: 100;
+        font-family: Arial;
+        outline: none;
+        border: none;
+        font-size: 0.5em;
+    }
+    .input-wrapper textarea {
+        height: 10em;
+        resize: vertical;
+    }
+/* #endregion */
 
 @media(max-width: 968px) {
     #warning {
         padding: 0 1em 0 1em;
     }
-    .content {
+    body > section {
         padding: 0;
     }
 }
@@ -537,7 +563,7 @@ button.material-icons {
     #warning h1 {
         margin-top: 0;
     }
-    .content {
+    body > section {
         padding: 0 15% 0 15%;
     }
 }
@@ -552,23 +578,23 @@ button.material-icons {
     #banner {
         top: unset;
     }
-    .content {
+    body > section {
         height: auto;
         min-height: 100vh;
         padding: 0;
     }
-        .content .outer {
+        body > section .outer {
             margin-top: 0;
         }
-        .content .inner {
+        body > section .inner {
             overflow-y: visible;
             font-size: 1.75em;
         }
-        .content .inner .header {
-            margin-left: -.3em;
-            margin-right: -.3em;
-            top:0;
-        }
+            body > section .inner .header {
+                margin-left: -.3em;
+                margin-right: -.3em;
+                top: 0;
+            }
     .testimonial img {
         width: 4em;
         height: 4em;
@@ -595,7 +621,6 @@ button.material-icons {
 
 /* #region glitch */
 
-
 @keyframes super-glitch {
     0% { transform: rotateX(0) skewX(0); }
     1% { transform: rotateX(10deg) skewX(90deg); }
@@ -620,7 +645,7 @@ button.material-icons {
         left: 2px;
         text-shadow: -2px 0 red;
         clip: rect(44px, 450px, 56px, 0);
-        animation: glitch-anim 5s infinite linear alternate-reverse;
+        animation: glitch-before 5s infinite linear alternate-reverse;
     }
 
     .glitch::after {
@@ -632,14 +657,14 @@ button.material-icons {
         height: 100%;
         left: -2px;
         text-shadow: -2px 0 #00fff9, 2px 2px red;
-        animation: glitch-anim2 1s infinite linear alternate-reverse;
+        animation: glitch-after 1s infinite linear alternate-reverse;
     }
 
 /* Creates an animation with 20 steaps. For each step, it calculates 
 a percentage for the specific step. It then generates a random clip
 box to be used for the random glitch effect. Also adds a very subtle
 skew to change the 'thickness' of the glitch.*/
-@keyframes glitch-anim {
+@keyframes glitch-before {
     0% {
         clip: rect(59px, 9999px, 42px, 0);
         transform: skew(0.67deg);
@@ -746,7 +771,7 @@ skew to change the 'thickness' of the glitch.*/
     }
 }
 
-@keyframes glitch-anim2 {
+@keyframes glitch-after {
     0% {
         clip: rect(83px, 9999px, 43px, 0);
         transform: skew(0.83deg);
@@ -915,10 +940,25 @@ skew to change the 'thickness' of the glitch.*/
     right: 0;
 }
 .divide.after::after { bottom: 0; z-index: 2; }
-.divide.before::before { top: 0; transform: scaleY(-1) scaleX(-1); }
+.divide.before::before { top: 0; }
 
-.divide.before.white::before { background-image: url(img/dividers/white.png); }
-.divide.after.white::after { background-image: url(img/dividers/white.png); }
-.divide.before.gray::before { background-image: url(img/dividers/gray.png); }
-.divide.after.gray::after { background-image: url(img/dividers/gray.png); }
+.divide.before.white::before, .divide.after.white::after { background-image: url(img/dividers/white.png); }
+.divide.before.gray::before, .divide.after.gray::after  { background-image: url(img/dividers/gray.png); }
+.divide.before.red::before, .divide.after.red::after  { background-image: url(img/dividers/red.png); }
+
+@media screen and (max-width: 900px) {
+    .divide.before::before, .divide.after::after {
+        height: 80px;
+        background-size: 100% 80px;
+        margin-top: -80px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .divide.before::before, .divide.after::after {
+        height: 50px;
+        background-size: 100% 50px;
+        margin-top: -50px;
+    }
+}
 /* #endregion */
