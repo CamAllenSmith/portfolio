@@ -1,16 +1,6 @@
 ﻿:root {
-    --accent-color: red;
-    --theme-color-1: rgb(255, 26, 14);
-    --theme-color-2: rgb(0, 186, 293);
-    --theme-color-3: rgb(158, 246, 0);
-
-    --theme-color-1-mixed: rgb(107.5, 86, 225);
-    --theme-color-2-mixed: rgb(129,216,146.5);
-    --theme-color-3-mixed: rgb(225, 26, 14);
-
-    --theme-color-1-faded: rgba(255, 26, 14, 0.5);
-    --theme-color-2-faded: rgba(0, 186, 293, 0.5);
-    --theme-color-3-faded: rgba(158, 246, 0, 0.5);
+    --text-color: #222;
+    --acent-color: #848484;
 }
 
 @import url("https://fonts.googleapis.com/css?family=Montserrat:100");
@@ -35,12 +25,7 @@ body {
     margin: 0;
     font-family: 'Open Sans', 'sans-serif'; /*'BrownBagLunch';*/
     background-repeat: repeat !important;
-    /*-webkit-touch-callout: none; /* iOS Safari *
-    -webkit-user-select: none; /* Safari *
-    -khtml-user-select: none; /* Konqueror HTML *
-    -moz-user-select: none; /* Firefox *
-    -ms-user-select: none; /* Internet Explorer/Edge *
-    user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+    color: var(--text-color);
     font-size: 1.6em;
 }
 .parallax {
@@ -86,7 +71,7 @@ body > section {
         body > section .inner h1 {
             font-size: 2em;
             margin: 0 0 0.25em 0;
-            border-bottom: 0.0125em solid var(--accent-color);
+            border-bottom: 0.0125em solid var(--text-color);
         }
 
         body > section .inner h2 {
@@ -458,20 +443,10 @@ body > section {
 #contact {
     text-align: center;
 }
-    #contact .inner {
-        background: #444957;
-        color: white;
-    }
 #send {
-    color: var(--theme-color-3-mixed);
     font-size: 1em;
     min-width: 8em;
 }
-
-    #send:hover {
-        background: var(--theme-color-3-mixed);
-        color: white;
-    }
 /* #endregion contact */
 
 
@@ -486,13 +461,19 @@ button.material-icons {
 .outline-button {
     background: none;
     outline: none;
-    border: .05em solid var(--accent-color);
+    border: .05em solid var(--text-color);
+    color: var(--text-color);
     border-radius: .2em;
-    color: white;
     padding: 0em 1em 0em 1em;
     font-family: 'AmaticSC-Regular';
     font-weight: bold;
     cursor: pointer;
+}
+@media (hover:hover) {
+    .outline-button:hover {
+        background: var(--text-color);
+        color: white;
+    }
 }
 
 .underline {
@@ -518,7 +499,7 @@ button.material-icons {
 /* #region input-wrapper */
 .input-wrapper {
     background: white;
-    border: 1px solid var(--accent-color);
+    border: 1px solid var(--text-color);
     border-radius: .15em;
     display: flex;
     align-items: stretch;
@@ -526,7 +507,7 @@ button.material-icons {
     .input-wrapper i {
         flex-shrink: 0;
         padding: 0 0.25em;
-        background: red;
+        background: var(--text-color);
         color: white;
         display: flex;
         align-items: center;
