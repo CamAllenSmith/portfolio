@@ -120,6 +120,7 @@ body > section {
     min-height: calc(100vh - 3em); /* 100vh; */
     font-size: 1.25em;
 }
+#home .inner > .flex-fill { width: 100%; }
 
 @media screen and (max-width:720px) {
     #home {
@@ -299,7 +300,7 @@ body > section {
     z-index: -2;
 }
 
-/* #region money rain */
+/* #region rain */
 #rain {
     position: absolute;
     top: 0;
@@ -308,97 +309,33 @@ body > section {
     bottom: 0;
     z-index: -1;
 }
-
-    #rain div.money { background-image: url('img/money.jpg'); }
-    #rain div.gtx { background-image: url('img/3090.png'); }
-    #rain div.wow { background-image: url('img/wow.png'); }
-    #rain div.dscim { background-image: url('img/dscim.png'); }
-
-    #rain div {
-        min-width: 3em;
-        width: 10%; /*2.3em;*/
-        height: 2em; /* height doesnt really matter that much, want it to be big enough to where it always fits. this also determines the center of rotation */
-        opacity: 0; /* invisible until animation starts*/
-        display: inline-block;
-        position: relative;
-        background-size: contain;
-        background-repeat: no-repeat;
-        -webkit-animation: rain 5s infinite linear;
-        -moz-animation: rain 5s infinite linear;
-    }
-
-        #rain div:nth-child(4n-4) {
-            -webkit-animation-delay: .5s;
-            -moz-animation-delay: .5s;
-        }
-
-        #rain div:nth-child(5n+3) {
-            -webkit-animation-delay: .75s;
-            -moz-animation-delay: .75s;
-        }
-
-        #rain div:nth-child(3n-3) {
-            -webkit-animation-delay: 1.5s;
-            -moz-animation-delay: 1.5s;
-        }
-
-        #rain div:nth-child(2n+5) {
-            -webkit-animation-delay: 2s;
-            -moz-animation-delay: 2s;
-        }
-
-        #rain div:nth-child(3n+10) {
-            -webkit-animation-delay: 2.5s;
-            -moz-animation-delay: 2.5s;
-        }
-
-        #rain div:nth-child(7n+5) {
-            -webkit-animation-delay: 3s;
-            -moz-animation-delay: 3s;
-        }
-
-        #rain div:nth-child(4n+5) {
-            -webkit-animation-delay: 3.25s;
-            -moz-animation-delay: 3.25s;
-        }
-
-        #rain div:nth-child(3n+7) {
-            -webkit-animation-delay: 4s;
-            -moz-animation-delay: 4s;
-        }
-
-@-webkit-keyframes rain {
-    0% {
-        opacity: 1;
-        -webkit-transform: translate(0, -5vh) rotateZ(0deg);
-    }
-
-    75% {
-        opacity: 1;
-        -webkit-transform: translate(100px, 75vh) rotateZ(270deg);
-    }
-
-    100% {
-        opacity: 0;
-        -webkit-transform: translate(150px, 95vh) rotateZ(360deg);
-    }
+#rain div {
+    min-width: 3em;
+    width: 10%; /*2.3em;*/
+    height: 2em; /* height doesnt really matter that much, want it to be big enough to where it always fits. this also determines the center of rotation */
+    opacity: 0; /* invisible until animation starts*/
+    display: inline-block;
+    position: relative;
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: rain 5s infinite linear;
 }
-
-@-moz-keyframes rain {
-    0% {
-        opacity: 1;
-        -webkit-transform: translate(0, -5vh) rotateZ(0deg);
-    }
-
-    75% {
-        opacity: 1;
-        -webkit-transform: translate(4em, 75vh) rotateZ(270deg);
-    }
-
-    100% {
-        opacity: 0;
-        -webkit-transform: translate(5em, 85vh) rotateZ(360deg);
-    }
+#rain div.money { background-image: url('img/money.jpg'); }
+#rain div.gtx { background-image: url('img/3090.png'); }
+#rain div.wow { background-image: url('img/wow.png'); }
+#rain div.dscim { background-image: url('img/dscim.png'); }
+#rain div:nth-child(4n-4) { animation-delay: .5s; }
+#rain div:nth-child(5n+3) { animation-delay: .75s; }
+#rain div:nth-child(3n-3) { animation-delay: 1.5s; }
+#rain div:nth-child(2n+5) { animation-delay: 2s; }
+#rain div:nth-child(3n+10) { animation-delay: 2.5s; }
+#rain div:nth-child(7n+5) { animation-delay: 3s; }
+#rain div:nth-child(4n+5) { animation-delay: 3.25s; }
+#rain div:nth-child(3n+7) { animation-delay: 4s; }
+@keyframes rain {
+    0% { opacity: 1; transform: translate(0, -5vh) rotateZ(0deg); }
+    75% { opacity: 1; transform: translate(100px, 75vh) rotateZ(270deg); }
+    100% { opacity: 0; transform: translate(150px, 95vh) rotateZ(360deg); }
 }
 /* #endregion money rain */
 
@@ -476,13 +413,10 @@ button.material-icons {
     }
 }
 
-.underline {
-    text-decoration: underline;
-}
-
-.center-align {
-    text-align: center;
-}
+.underline { text-decoration: underline; }
+.center-align { text-align: center; }
+.relative { position: relative; }
+.noverflow { overflow: hidden; }
 /* #endregion util */
 
 /* #region flex */
