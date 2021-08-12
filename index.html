@@ -2,133 +2,220 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Lil Dope</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="style.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style/shortcuts.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 
     <script defer src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script defer type="module" src="script.js"></script>
 </head>
-<body class="parallax">
-    <section id="home">
-        <div class="outer divide after white">
-            <div class="inner column">
-                <div class="flex-fill relative center column gap noverflow">
-                    <div id="rain">
-                        <div class="money"></div>
-                        <div class="gtx"></div>
-                        <div class="money"></div>
-                        <div class="gtx"></div>
-                        <div class="money"></div>
-                        <div class="gtx"></div>
-                        <div class="money"></div>
-                        <div class="gtx"></div>
-                    </div>
-    
-                    <div id="socials" class="column gap-50">
-                        <div class="row gap">
-                            <a class="fab fa-linkedin" href="https://www.linkedin.com/"></a>
-                            <a class="fab fa-github-square" href="https://www.github.com/"></a>
-                        </div>
-                        <a class="fa fa-envelope-square" href="mailto:CamAllenSmith@gmail.com"></a>
-                    </div>
-    
-                    <div class="column gap-75 flex-fill center justify-end">
-                        <div class="glitch" data-text="Cameron">Cameron</div>
-                        <div class="glitch" data-text="Smith">Smith</div>
-                        <div class="profile">
-                            <img src="img/lildope.png" />
-                        </div>
-                    </div>
-    
-                    <div class="title flex-fill no-shrink"></div>    
-                    <div class="scanlines"></div>
+<body>
+
+    <section id="home" class="relative center column gap noverflow">
+        <div id="rain">
+            <div class="money"></div>
+            <div class="gtx"></div>
+            <div class="money"></div>
+            <div class="gtx"></div>
+            <div class="money"></div>
+            <div class="gtx"></div>
+            <div class="money"></div>
+            <div class="gtx"></div>
+        </div>
+
+        <div class="socials column gap-50">
+            <div class="row gap">
+                <a class="fab fa-linkedin" href="https://www.linkedin.com/"></a>
+                <a class="fab fa-github-square" href="https://github.com/CamAllenSmith"></a>
+            </div>
+            <a class="fa fa-envelope-square" href="mailto:CamAllenSmith@gmail.com"></a>
+        </div>
+
+        <div class="column gap">
+            <div class="column gap-75 flex-fill center justify-end">
+                <div class="glitch" data-text="Cameron">Cameron</div>
+                <div class="glitch" data-text="Smith">Smith</div>
+                <div class="profile">
+                    <img src="img/lildope.png" />
                 </div>
-               
-                <div id="summary">
-                    <div>
-                        Full Stack developer with an <b>eye</b> for design and a <b>mind</b> for {something smart sounding}.
-                    </div>
+            </div>
+            <div class="title flex-fill no-shrink"></div>    
+        </div>        
+
+        <div class="scanlines"></div>
+    </section>
+ 
+    <!--<div id="navbar_bg"></div>-->
+    <nav id="navbar" class="center justify-center row gap">
+        <button data-section="home" class="selected">
+            <i class="fa fa-home"></i>
+            Home
+        </button>
+        <button data-section="about">
+            <i class="fa fa-user"></i>
+            About
+        </button>
+        <button data-section="skills">
+            <i class="fa fa-list"></i>
+            Skills
+        </button>
+        <button data-section="projects">
+            <i class="fa fa-code-branch"></i>
+            Projects
+        </button>
+        <!--<button data-section="contact">
+            <i class="fa fa-envelope"></i>
+            Contact
+        </button>-->
+    </nav>
+
+    <section id="content">             
+        <section id="summary" class="divide after white">
+            <div>
+                Full Stack developer with an eye for <b>design</b> and a mind for <b>{something smart sounding}</b>.
+            </div>
+        </section>
+        <section id="about">
+            <h1>About Me</h1>
+            Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
+
+            <h2>Lorem Ipsum</h2>
+            Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
+        </section>
+        <section id="skills">
+
+            <!-- 
+                get some fancy progress bar stuff here 
+                progress bar should pop in, and load up (this animation shouldn't trigger until scrolled into view)
+            -->
+            <h1>Technical Proficiencies</h1>
+            Blah bah blah talk about how knowing languages and buzzword crap doesnt matter as long as you're an adept programmer that's able to learn, reference documentation, and document things appropriately.
+            <br/><br/>
+            My skillset is very focused on FullStack development using [HTML, JavaScript, CSS] for front-end, C# for server-side, and MSSQL for database.
+
+
+            <h2>Font-End</h2>
+            <ul>
+                <li>HTML</li>
+                <li>Javascript / TypeScript ( + jQuery)</li>
+                <li>CSS ( + SASS)</li>
+            </ul>
+            <h2>Back-End</h2>
+            <ul>
+                <li>C# (.NET, LINQ, ASP.NET, WPF, WinForms)</li>
+                <li>SQL (MSSQL, MySQL, SQLite, etc)</li>
+            </ul>
+        </section>
+        <section id="projects" class="column gap">
+
+            <!-- TODO: 
+                
+                      <a href="https://github.com/Cam-Smith-Games">View on Github</a>
+            
+                create separate org for each of these categories: games, demos, UI?
+                OR
+                bring technical demos to main account
+
+                i think UI stuff should probably stay grouped together tho, i..e "CamUI" or something
+                (something more catchy than that)
+            -->
+      
+            <section>
+                <h3>Games</h3>
+                <div class="grid games">
+                    <div>Robo Ranger</div>
+                    <div>Phantom Flux</div>
+                    <div>Crime-Lapse</div>
+    
+                    <div>Kitty Wars</div>
+                    <div>Bunny Wars</div>
+                    <div>Realm of the Mad Graem</div>
                 </div>
+            </section>
 
-            </div>     
-        </div>
-    </section>
+            <section>
+                <h3>Technical Demos</h3>
+                <div class="grid demos">
+                    <div>Dialogue</div>
+                    <div>Lighting</div>
+                    <div>Animation</div>
+    
+                    <div>Map Loading</div>
+                    <div>Polygon Utility</div>
+                    <div>Curve Editor</div>
+                    <div>Recursive Works</div>
+                    <div>Bolt Configurator</div>
+                </div>
+            </section>
 
-    <!--<nav id="navbar" class="flex-center">
-        <button data-section="home" class="outline-button selected">Home</button>
-        <button data-section="about" class="outline-button">About</button>
-        <button data-section="contact" class="outline-button">Contact</button>
-    </nav>-->
+            <section>
+                <h3>UI Frameworks</h3>
+                <div class="grid frameworks">
+                    <div>Popups</div>
+                    <div>Dropdowns</div>
+                    <div>IFramework</div>
+                </div>
+            </section>
 
-    <section id="about">
-        <div class="outer">
-            <div class="inner">
-                <h1>About Me</h1>
-                Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
-
-                <h2>Lorem Ipsum</h2>
-                Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
-            </div>
-        </div>
-    </section>
-    <section id="skills">
-        <div class="outer divide after white">
-
-            <!--<video src="img/coding.mp4" autoplay muted loop></video>-->
-
-            <div class="inner">
-
-                <h1>Technical Proficiencies</h1>
-                Blah bah blah talk about how knowing languages and buzzword crap doesnt matter as long as you're an adept programmer that's able to learn, reference documentation, and document things appropriately.
-                <br/><br/>
-                My skillset is very focused on FullStack development using [HTML, JavaScript, CSS] for front-end, C# for server-side, and MSSQL for database.
-   
-
-                <h2>Font-End</h2>
-                <ul>
-                    <li>HTML</li>
-                    <li>Javascript / TypeScript ( + jQuery)</li>
-                    <li>CSS ( + SASS)</li>
-                </ul>
-                <h2>Back-End</h2>
-                <ul>
-                    <li>C# (.NET, LINQ, ASP.NET, WPF, WinForms)</li>
-                    <li>SQL (MSSQL, MySQL, SQLite, etc)</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <section id="contact">
-        <div class="outer">
-            <div class="inner">
-                <h1>Contact Me</h1>
-
-                <div class="column gap-50">
-                    <div class="row gap-50">
-                        <div class="input-wrapper flex-fill">
-                            <i class="material-icons">contact_mail</i>
-                            <input type="text" placeholder="Your Email..." />
+        </section>
+        
+        <!--<section id="contact">
+            <div class="outer">
+                <div class="inner">
+                    <h1>Contact Me</h1>
+    
+                    <div class="column gap-50">
+                        <div class="row gap-50">
+                            <div class="input-wrapper flex-fill">
+                                <i class="material-icons">contact_mail</i>
+                                <input type="text" placeholder="Your Email..." />
+                            </div>
+                            <div class="input-wrapper flex-fill">
+                                <i class="material-icons">contact_mail</i>
+                                <input type="text" placeholder="Your Name..." />
+                            </div>
                         </div>
-                        <div class="input-wrapper flex-fill">
-                            <i class="material-icons">contact_mail</i>
-                            <input type="text" placeholder="Your Name..." />
+                        <div class="input-wrapper">
+                            <i class="material-icons">mail_outline</i>
+                            <input id="subject" placeholder="Subject..." />
                         </div>
-                    </div>
-                    <div class="input-wrapper">
-                        <i class="material-icons">mail_outline</i>
-                        <input id="subject" placeholder="Subject..." />
-                    </div>
-                    <div class="input-wrapper">
-                        <i class="material-icons">chat</i>
-                        <textarea id="message" placeholder="Message..."></textarea>
-                    </div>
-
-                    <button id="send" class="outline-button">Send</button>
-                </div>          
+                        <div class="input-wrapper">
+                            <i class="material-icons">chat</i>
+                            <textarea id="message" placeholder="Message..."></textarea>
+                        </div>
+    
+                        <button id="send" class="outline-button">Send</button>
+                    </div>          
+                </div>
             </div>
-        </div>
+        </section>-->
+    
     </section>
+
+
+
+    <section id="footer" class="socials row center justify-center gap-50">
+        <a class="fab fa-linkedin" href="https://www.linkedin.com/"></a>
+        <a class="fab fa-github-square" href="https://github.com/CamAllenSmith"></a>
+        <a class="fa fa-envelope-square" href="mailto:CamAllenSmith@gmail.com"></a>
+    </section>
+
+    <section id="footer2" class="center-align">
+        Powered by <b class="italic">Handwritten Code</b>
+    </section>
+
+    <!--<div id="loader">
+        <div class="slide-up"></div>
+        <div class="slide-down"></div>
+        <div class="fade-bg absolute-cover"></div>
+        <div class="inner absolute-cover">
+            <i><i></i></i>
+        </div>
+        <div class="text">
+            <span>Cameron</span>
+            <span>Smith</span>
+        </div>
+    </div>-->
 </body>
 </html>

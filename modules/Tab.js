@@ -13,6 +13,7 @@ export class Tab {
     /** @param id {string} the unique identifier for this tab. found in the "data-section" attribute of the navbar>button and the id of body>section
      * @param scroll_handler {import('./ScrollHandler.js').ScrollHandler} the handler to pause when scrolling into view */
     constructor(id, scroll_handler) {
+        //this.id = id;
         this.$section = $("#" + id);
         this.$button = $("#navbar > button[data-section='" + id + "']");
         /** the scroll handler to pause when scrolling into view */
@@ -22,6 +23,9 @@ export class Tab {
     /** selects this tab, unselects all others, and scrolls into view
      * @param scroll {boolean} if true, scrolls section into view */
     select(scroll) {
+
+        //console.log("selecting: " + this.id);
+
         $("#navbar .selected").removeClass("selected");
         this.$button.addClass("selected");
 
