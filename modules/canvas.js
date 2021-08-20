@@ -91,7 +91,7 @@ export function getImages(sources, progress, complete) {
                     });
                     resolve(img);
                 }
-                img.src = "/img/" + source;
+                img.src = "/media/" + source;
             })
         )
     ).then(complete);
