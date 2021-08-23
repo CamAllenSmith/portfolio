@@ -1,0 +1,71 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="/projects/projects.js"></script>
+    <title>Bunny Wars</title>
+</head>
+<body></body>
+    <!--<side-nav>
+        <item label="Weapons" section="weapons"></item>
+        <item label="World" section="world"></item>
+        <item label="Mechanics" section="mechanics"></item>
+        <item label="Systems" section="systems"></item>
+    </side-nav>-->
+
+    <project-container 
+        color="#5f856e"
+        categories="HTML5, Javascript, Platformer"
+        tags="Sonic, Double Jump, Ground Pound, Seamless Death Animation"
+    >
+
+        <section header="Combat">
+            <video muted autoplay loop>
+                <source src="combat.webm" type="video/webm">
+                <source src="combat.mp4" type="video/mp4">
+            </video>
+            <p>
+                The "Spectral Slam" and "Ball of Doom" attacks emulate the abilities of mario and sonic, respectively.
+            </p>
+        </section>
+
+        <section header="Enemies">
+            <video muted autoplay loop>
+                <source src="enemy.webm" type="video/webm">
+                <source src="enemy.mp4" type="video/mp4">
+            </video>
+            <p>
+                The enemies in this game are zombies with the exception of the "floppits" which do nothing but fly in the air and wait to be bounced off of. The zombies are hidden throughout the level until the player walks within distance of them, where they crawl out of the ground. If the player remains within range, they will chase him and try to attack him. Otherwise, they will simply roam around the platform they're standing on.
+            </p>
+        </section>
+
+        <section header="Level Design">
+            <img src = "level_design.jpg">
+            <p>
+                When this game was developed, I wasn't aware of any tile editing software such as <a href = "http://www.mapeditor.org/">Tiled Map Editor</a>. Instead, I simply created helper functions for manually placing groups of tiles along with a recursive algorithm that decides which texture to give to each tile based on the positions of their neighboring tiles.
+            </p>
+        </section>
+
+        <section header="Background Parallax Effect">
+            <video muted autoplay loop>
+                <source src="parallax.webm" type="video/webm">
+                <source src="parallax.mp4" type="video/mp4">
+            </video>
+            <p>
+                By layering multiple background images, I was able to create a parallax effect as the player moves throughout the level. Even if the player doesn't notice it at first, it definitely adds to the game's aesthetic and immersion when compared with a singular background image.
+            </p>
+        </section>
+
+        <section header="Smooth Level and Death Transitions">
+            <video muted autoplay loop>
+                <source src="transition.webm" type="video/webm">
+                <source src="transition.mp4" type="video/mp4">
+            </video>
+            <p>
+                When the player dies or advances to the next level, the world is placed below the player's current position so that he falls seamlessly into it, making for a nice effect.
+            </p>
+        </section>
+
+    </project-container>
+   
+</body>
+</html>

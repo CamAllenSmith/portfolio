@@ -1,47 +1,165 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="/projects/project.css" />
-
-    <title>Phantom Flux (Original)</title>
+    <script defer src="/projects/projects.js"></script>
+    <title>Phantom Flux</title>
 </head>
-<body>
-    <h1>Phantom Flux (OLD)</h1>
-    <header>Various Weapon Types and Enemies</header>
-    <hr>
-    <video loop autoplay muted><source src="/media/projects/games/phantom_flux_old/weapons.webm" type="video/webm"></video>
-    <p>I made tons of different weapon types, including the phaser disc, explosive disc, shortbow, longbow, longsword, shuriken, and dragonspear. The enemies that were implemented are spiders, imps, and ice golems.</p>
-    <video loop autoplay muted><source src="/media/projects/games/phantom_flux_old/crit.webm" type="video/webm"></video>
-    <p>Each weapon has it's own crit chance and crit multiplier which effects the player's stats. Here you can see the player critting with the longsword which deals 2x damage.</p>
-    <header>Map, Mini-map, and World Generation</header>
-    <hr>
-    <video loop autoplay muted><source src="/media/projects/games/phantom_flux_old/map.webm" type="video/webm"></video>
-    <p>One of the main features of this game is the infinite world generation. This is done using a "chunk" system similar to minecraft. To aid in adventuring the world, the player has a worlf form which grants increased movement speed at the cost of not being able to attack.</p>
-    <header>Phantom form, Phaser Disc, and Combos</header>
-    <hr>
-    <video loop autoplay muted><source src="/media/projects/games/phantom_flux_old/disc1.webm" type="video/webm"></video>
-    <video loop autoplay muted><source src="/media/projects/games/phantom_flux_old/disc2.webm" type="video/webm"></video>
-    <p>Probably the coolest weapon of them all is the phaser disc. This was the first weapon I came up with, and it works perfectly with the players ability to stop time. When the player holds down a directional key, the phaser disc will stay in position, and when the key is released it will return to the player. When the player is in phantom form, he can create multiple copies of himself, allowing him to create a path for the disc to follow, allowing for some crazy awesome combos.</p>
-    <video loop autoplay muted><source src="/media/projects/games/phantom_flux_old/disc3.webm" type="video/webm"></video>
-    <video loop autoplay muted><source src="/media/projects/games/phantom_flux_old/combo1.webm" type="video/webm"></video>
-    <video loop autoplay muted><source src="/media/projects/games/phantom_flux_old/combo2.webm" type="video/webm"></video>
-    <p>With the phantom form ability and explosive disc, the possibilities of combos are endless.</p>
-    <header>Various Arrow Types</header>
-    <hr>
-    <video loop autoplay muted><source src="/media/projects/games/phantom_flux_old/arrows.webm" type="video/webm"></video>
-    <p>There are two different bows to choose from. The shortbow which is fast and low damage, and the longbow which has a cast time but packs a punch. Along with these bow types are various arrow types, including the standard arrow, concussive arrow (slows enemies) and the splitter arrow which splits into 3 lasers that all shoot out and then return to the center point, resulting in tons of damage.</p>
-    <header>Stats, Equipment, Time and Weather System</header>
-    <hr>
-    <video loop autoplay muted><source src="/media/projects/games/phantom_flux_old/stats.webm" type="video/webm"></video>
-    <p>The character menu displays the player's stats along with currently equipped weapons and the current time and weather. The player can have two weapons equipped at a time, a melee and ranged weapon, along with the associated ammo type.</p>
-    <header>Quest and Dialogue System</header>
-    <hr>
-    <video loop autoplay muted><source src="/media/projects/games/phantom_flux_old/quest.webm" type="video/webm"></video>
-    <p>This game is equipped with a fully functioning quest and dialogue system. The quests that have been added are currently very simple, such as shooting 5 targets, but the system is ready for more quests to be added. When a quest is completed, the player is rewarded with money and experience, and it allows the player to pick up new quests. For example, when the player completes the quest that has him shoot 5 targets, the follow-up quest requires him to shoot 5 targets within a very small time period (2 seconds or so) which introduces him to the phantom form ability that slows down time.</p>
+<body></body>
+    <!--<side-nav>
+        <item label="Weapons" section="weapons"></item>
+        <item label="World" section="world"></item>
+        <item label="Mechanics" section="mechanics"></item>
+        <item label="Systems" section="systems"></item>
+    </side-nav>-->
 
+    <project-container 
+        color="#309262"
+        categories="HTML5, Javascript, RPG"
+        tags="Time Travel, World Generation, Quests, Dialogue, Day/Night Cycle, Weather, Combat Stats, Weapon Variety, Quick Weapon Switch"
+    >
+  
+        <section header="Phantom Form...">
+            <p>
+                Player can enter "Phantom Form" to slow down time.<br/>
+                While in this form, the player can create a path for the phaser disc to follow upon exiting.
+            </p>
+            <video loop autoplay muted class="mini"><source src="disc1.webm" type="video/webm"></video>
+            <i>Entering and exiting phantom form with phaser disc.</i>
+            <video loop autoplay muted class="mini"><source src="disc3.webm" type="video/webm"></video>
+            <i>Using phaser disc to take out a pack of spiders.</i>
+            <video loop autoplay muted class="mini"><source src="combo2.webm" type="video/webm"></video>
+            <i>Combining phaser disc with explosive disc for burst AOE damage.</i>
+        </section>    
+
+        <section header="Weapons...">               
+            <p>
+                Many different weapon types were created to promote variety in combat (some more useful than others).
+                The player can have two weapons equipped at a time, a melee and ranged weapon, along with an associated ammo type.
+            </p>
+            <table>
+                <tr>
+                    <td>Phaser Disc</td>
+                    <td>Disc that can be placed and recalled to player, dealing damage to everything in it's path. Has multiple charges.</td>
+                </tr>
+                <tr>
+                    <td>Explosive Disc</td>
+                    <td>Landmine disc that can be placed. Explodes on conttact with Phaser Disc.</td>
+                </tr>
+                <tr>
+                    <td>Shortbow</td>
+                    <td>Rapid fire short range bow.</td>
+                </tr>
+                <tr>
+                    <td>Longbow</td>
+                    <td>Longer range than shortbow, but significantly more damage. Shoots player backward upon firing.</td>
+                </tr>
+                <tr>
+                    <td>Longsword</td>
+                    <td>Rapid swinging melee weapon. 2x critical multiplier.</td>
+                </tr>
+                <tr>
+                    <td>Shuriken</td>
+                    <td>Rapid firing ranged weapon.</td>
+                </tr>
+                <tr>
+                    <td>Dragonspear</td>
+                    <td>Massive spear with chain attached that pulls player to destination upon impact.</td>
+                </tr>                
+            </table>
+
+
+            <video loop autoplay muted class="mini"><source src="weapons.webm" type="video/webm"></video>
+            <i>Rapidly switching between a few different weapons.</i>
+
+            <video loop autoplay muted class="mini"><source src="crit.webm" type="video/webm"></video>
+            <i>Longsword dealing 2x critical damage.<br/>(Each weapon has different critical chance and multipliers.)</i>    
+        </section>
+
+        <section header="Arrows...">
+            <p>To promote combat variety even further, there are also a few different arrow types to switch between.</p>
+            <table>
+                <tr>
+                    <td>Standard</td>
+                    <td>Basic arrow.</td>
+                </tr>
+                <tr>
+                    <td>Concussive</td>
+                    <td>Low damage, applies slow.</td>
+                </tr>
+                <tr>
+                    <td>Splitter</td>
+                    <td>Splits into 3 separate lasers.</td>
+                </tr>             
+            </table>
+            <video loop autoplay muted><source src="arrows.webm" type="video/webm"></video>
+            <i>Rapidly switching between arrow types mid-combat.</i>    
+        </section>
+
+        <section header="Enemies...">
+            <p>Not too much progress was made on different enemy types.<br/>The only thing really distingusihing them is speed, health, and size.</p>
+            <table>
+                <tr>
+                    <td>Spider</td>
+                    <td>Common, low health, spawn in large groups.</td>
+                </tr>
+                <tr>
+                    <td>Imp</td>
+                    <td>Rare, fast, medium health.</td>
+                </tr>
+                <tr>
+                    <td>Ice Golem</td>
+                    <td>Massive, slow, high health.</td>
+                </tr>             
+            </table>
+        </section>
+
+        <section header="World Generation...">
+            <p>
+                Infinite world generation using a "chunk" system similiar to Minecraft.<br/>
+                To aid in exploration, the player has a wolf form for increased movement speed at the cost of not being able to attack.
+            </p>    
+
+            <video loop autoplay muted style="object-position: top;"><source src="map.webm" type="video/webm"></video>
+            <i>World being generated as player roams in wolf form.</i>
+        </section>
+        
+        <section header="Core Systems...">
+            <video loop autoplay muted><source src="stats.webm" type="video/webm"></video>
+            <p>
+
+                <table>
+                    <tr>
+                        <td>Stats</td>
+                        <td>Combat stats to aid in combat. Upon leveling up, the player can choose which stats to prioritize.</td>
+                    </tr>
+                    <tr>
+                        <td>Equipment</td>
+                        <td>Player can have a melee weapon, ranged weapon, and ammo type equipped at the same time. Can rapidly switch using the hotbar.</td>
+                    </tr>
+                    <tr>
+                        <td>Time</td>
+                        <td>Basic day/night cycle. The current time can be seen at the top of the character menu.</td>
+                    </tr>             
+                    <tr>
+                        <td>Weather</td>
+                        <td>Basic weather system. Will randomly start raining for a random amount of time.</td>
+                    </tr>
+                </table>
+            </p>
+        </section>
+
+        <section header="Quests/Dialogue...">
+            <p>
+                This game features it's own Dialogue and Quest systems.
+                NPCs can be interacted with and the player can start, track, and complete quests given to them by NPCs.<br/><br/>
+                Completing quests rewards the player with specific rewards and also unlocks more quests to complete.
+            </p>
+            <video loop autoplay muted><source src="quest.webm" type="video/webm"></video>
+            <i>Player starting and completing the basic "Shoot 5 targets" quest.</i>
+        </section>
+
+
+    </project-container>
+   
 </body>
 </html>

@@ -2,6 +2,7 @@
 import { rando } from "./modules/rando.js";
 import { ScrollHandler } from "./modules/ScrollHandler.js";
 import { Tab } from "./modules/Tab.js";
+import * as url from "./modules/url.js";
 
 
 // random title
@@ -64,5 +65,13 @@ $("#navbar button").on("click", function () {
 scroll_handler.start();
 // #endregion
 
+
+
+
+let params = url.get();
+console.log(params);
+if ("section" in params) {
+    $("#navbar button[data-section=" + params.section + "]").click();
+}
 
 

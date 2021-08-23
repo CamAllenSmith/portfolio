@@ -1,0 +1,58 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="/projects/projects.js"></script>
+    <title>Android RPG</title>
+</head>
+<body></body>
+    <!--<side-nav>
+        <item label="Weapons" section="weapons"></item>
+        <item label="World" section="world"></item>
+        <item label="Mechanics" section="mechanics"></item>
+        <item label="Systems" section="systems"></item>
+    </side-nav>-->
+
+    <project-container 
+        color="#124a39"
+        categories="Android, Java, RPG"
+        tags="Character Creation, Save/Load, Linked Maps, Quick Weapon Switch"
+    >
+
+
+        <section header="Character Creation">
+            <video muted autoplay loop><source src="character_creation.webm" type="video/webm"></video>
+            <p>This game features a fully functioning character creation menu where the user can choose sex, hair style, hair color, and skin color.</p>
+        </section>
+        
+        <section header="Map" class="center-align column gap-50">
+            <video muted autoplay loop><source src="map.webm" type="video/webm"></video>
+            <img src = "map1.png">
+            <img src = "map2.png">
+            <img src = "map3.png">
+            <p>I designed each zone using <a href = "http://www.mapeditor.org/">Tiled Map Editor</a>. The map tile information was exported to JSON to be read by the game. You might ask why the third map has so many squares all over the place, and this is to ensure that the correct footstep sound is played depending on the player's position. For example, when the player walks along the path, it plays a dirt footstep sound, whereas walking on the grass results in a grass footstep sound.</p>    
+        </section>
+    
+        <section header="Enemies">
+            <video muted autoplay loop><source src="enemies.webm" type="video/webm"></video>
+            <p>The enemies include spiders and skeletons (ranger/warrior/wizard versions). I was in the process of adding a giant but it was never finished.</p>
+        </section>
+
+        <section header="Inventory System">
+            <video muted autoplay loop><source src="chest_inventory.webm" type="video/webm"></video>
+            <p>I created a fully functioning inventory and chest system to hold weapons/armor/potions.</p>
+        </section>
+
+        <section header="Quick Weapon Switch UI">
+            <video muted autoplay loop><source src="weapon_switch.webm" type="video/webm"></video>
+            <p>The player can equip four weapons simultaneously, and then quickly switch between them using the button that lies in between the directional attack arrows.</p>
+        </section>
+
+        <section header="Saving">
+            <video muted autoplay loop><source src="saving.webm" type="video/webm"></video>
+            <p>When the save button is pressed, each game object is serialized to JSON and are then re-imported when the user presses "Load Game" on the main menu.</p>
+        </section>
+
+    </project-container>
+   
+</body>
+</html>
